@@ -1,3 +1,4 @@
+
 # SkyClaw: An Agent-Harnessing Framework on HAPS with Information Bottlenecked Memory Compression
 
 High altitude platform stations (HAPS) are promising aerial base stations for future air-to-ground networks due to their wide coverage and flexible deployment. However, their stratospheric operation makes maintenance, real-time tuning, and fault recovery difficult. Moreover, HAPS coverage performance is affected by non-stationary node distributions, emergency demands, and tidal mobility patterns. This dynamic environment requires continuous three-dimensional trajectory adaptation.
@@ -9,7 +10,7 @@ Existing methods (convex optimization, heuristic search, reinforcement learning)
 - Grounding physical actions through deterministic tools
 - Introducing an **Information Bottleneck (IB)-guided memory compression** to preserve task-relevant knowledge and filter redundant observations, enabling stable long-horizon operation
 
-![SkyClaw System Architecture]
+![SkyClaw System Architecture]<img width="719" height="540" alt="SkyClaw" src="https://github.com/user-attachments/assets/41be24f8-33ed-4d67-aba3-0e485fbf673d" />
 
 ## Simulation Results
 
