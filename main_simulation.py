@@ -1,5 +1,4 @@
 # SkyClaw main simulation entry point — multi-agent HAPS coverage optimization.
-
 from __future__ import annotations
 
 import argparse
