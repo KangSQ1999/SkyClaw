@@ -1,0 +1,71 @@
+# SkyClaw Simulation Configuration
+
+simulation:
+  # Time-related parameters
+  total_timesteps: 24           # Total simulation timesteps (representing 24 hours)
+  timestep_unit: "hours"        # Unit of each timestep
+
+  # Random seed for reproducibility (use null for random initialization)
+  RANDOM_SEED: 41               # Random seed for user distribution generation
+
+  # Spatial boundary parameters (2D plane in km)
+  space:
+    width: 1000                 # X-axis boundary (km)
+    height: 1000                # Y-axis boundary (km)
+    boundary_mode: "reflective" # Boundary crossing mode: "reflective" | "periodic"
+
+haps:
+  # High Altitude Platform Station parameters
+  count: 4                      # Number of HAPS agents
+  coverage_radius: 210          # Coverage radius in km
+  initial_altitude: 20000       # Initial altitude in meters (20km, stratosphere)
+  max_speed: 40                 # Maximum movement speed per timestep (km/h)
+
+ground_users:
+  # Ground User Equipment parameters
+  count: 500                    # Number of ground users
+
+  # User mobility configuration
+  MOBILE_USER_RATIO: 0.5        # 50% mobile users, 50% stationary users
+
+  # Multi-cluster Gaussian distribution config
+  NUM_CLUSTERS: 30              # Total number of cluster centers generated
+  CLUSTER_STD: 50               # Cluster standard deviation (unified across clusters), km
+
+  # Tidal event config (user gathering event) — local gravity mechanism
+  ENABLE_TIDAL_EVENT: 1         # Enable tidal event: 0=off, 1=on
+  TIDAL_START_TIME: 18          # Tidal start time (18:00 evening)
+  TIDAL_END_TIME: 24            # Tidal end time (24:00 midnight)
+  TIDAL_TARGET: [180, 700]      # Tidal target coordinates [x, y] km
+
+  # Tidal physics engine params
+  TIDAL_INFLUENCE_RADIUS: 400    # Max range of tidal influence, km
+  TIDAL_TRACTION_SPEED: 50       # Speed of users affected by tidal pull, km/h
+  TIDAL_SCATTER_RADIUS: 20       # Random scatter radius around tidal target, km (prevents pixel overlap)
+
+
+  IB_BETA: 1.0                   # Lagrange multiplier beta (compression vs. prediction trade-off)
+  IB_UTILITY_THRESHOLD: 0.2      # Utility threshold theta (memory update decision gate)
+  IB_EMBEDDING_MODEL: "text-embedding-3-small"  # Embedding model (for D_JS calculation)
+
+  # Legacy parameters (backward compatible)
+  NOVELTY_THRESHOLD: 0.5         # Semantic novelty threshold (legacy cross-entropy method)
+  ENABLE_LOGPROBS: true          # Enable LLM logprobs
+
+  # Emergency event config
+  ENABLE_EMERGENCY: 1           # Enable emergency event: 0=off, 1=on
+  EMERGENCY_START_TIME: 43200   # Emergency start time (12:00 = 43200 seconds)
+  EMERGENCY_END_TIME: 50400     # Emergency end time (14:00 = 50400 seconds)
+  EMERGENCY_POS: [900.0, 580.0] # Emergency coordinates [x, y] km
+
+  # Legacy movement parameters (retained for compatibility)
+  movement:
+    mode: "gaussian_random_walk"
+    base_speed: 10
+    randomness: 0.3
+    cluster_tendency: 0.4
+    cluster_centers: 5
+
+logging:
+  level: "INFO"                 # Logging level: DEBUG | INFO | WARNING | ERROR
+  log_interval: 1               # Log every N timesteps
