@@ -10,7 +10,7 @@ Existing methods (convex optimization, heuristic search, reinforcement learning)
 - Grounding physical actions through deterministic tools
 - Introducing an **Information Bottleneck (IB)-guided memory compression** to preserve task-relevant knowledge and filter redundant observations, enabling stable long-horizon operation
 
-![SkyClaw System Architecture]<img width="719" height="540" alt="SkyClaw" src="https://github.com/user-attachments/assets/41be24f8-33ed-4d67-aba3-0e485fbf673d" />
+<img width="719" height="540" alt="SkyClaw" src="https://github.com/user-attachments/assets/41be24f8-33ed-4d67-aba3-0e485fbf673d" />
 
 ## Simulation Results
 
