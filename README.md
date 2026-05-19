@@ -30,18 +30,6 @@ Existing methods (convex optimization, heuristic search, reinforcement learning)
 - Information Bottleneck-based memory compression and communication optimization
 - 288-frame simulation (24 hours, 5-min steps) with visualization output
 
-## Citation
-
-If you use SkyClaw in your research, please cite:
-
-```
-@misc{SkyClaw2025,
-  title = {An Agent Harnessing Framework on HAPS with Information Bottlenecked Memory Compression},
-  author = {Kang, Songqi and others},
-  year = {2025}
-}
-```
-
 ## Project Structure
 
 ```
